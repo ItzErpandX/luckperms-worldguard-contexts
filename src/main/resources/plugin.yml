@@ -1,0 +1,9 @@
+name: LPWGContexts
+version: 1.0
+main: me.itzerpandx.wgcontexts.WGContextsPlugin
+api-version: '1.21'
+author: ItzErpandX
+website: https://github.com/ItzErpandX
+description: Simple plugin that adds WorldGuard contexts for LuckPerms.
+depend: [LuckPerms, WorldGuard]
+softdepend: [WorldEdit]
