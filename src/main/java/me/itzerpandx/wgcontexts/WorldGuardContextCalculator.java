@@ -71,8 +71,15 @@ public class WorldGuardContextCalculator implements ContextCalculator<Player> {
                 continue;
             }
 
-            String contextKey = FLAG_CONTEXT_PREFIX + flag.getName().toLowerCase();
-            consumer.accept(contextKey, value.toString().toLowerCase());
+            String flagName = flag.getName();
+            String contextValue = value.toString().trim();
+
+            if (flagName == null || flagName.trim().isEmpty() || contextValue.isEmpty()) {
+                continue;
+            }
+
+            String contextKey = FLAG_CONTEXT_PREFIX + flagName.trim().toLowerCase(java.util.Locale.ROOT);
+            consumer.accept(contextKey, contextValue.toLowerCase(java.util.Locale.ROOT));
         }
     }
 
